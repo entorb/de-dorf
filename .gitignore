@@ -1,0 +1,13 @@
+# python
+__pycache__/
+.coverage
+.DS_Store
+.pytest_cache/
+.venv/
+.vscode/
+coverage_report/
+playground.py
+requirements-all.txt
+
+# project
+data/*.xlsx
