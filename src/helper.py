@@ -5,27 +5,27 @@ import streamlit as st
 from streamlit.delta_generator import DeltaGenerator
 
 
-def include_matomo_stats() -> None:
-    """Include Matomo access stats update JavaScript snippet."""
-    import streamlit.components.v1 as components
+@st.cache_data(ttl="1d")
+def read_data(pop: int) -> pd.DataFrame:
+    """Read and prepare the data (cached)."""
+    df = pd.read_csv("data/population.tsv", sep="\t").astype(int).set_index("Jahr")
+    d_pop_per_year = df.to_dict()["Einwohner"]
 
-    components.html(
-        """
-<script>
-var _paq = window._paq = window._paq || [];
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-(function() {
-    var u="https://entorb.net/stats/matomo/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '7']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-})();
-</script>
-    """,
-        height=0,
+    df = pd.read_csv("data/data.tsv", sep="\t")
+
+    # calc people from percent
+    df.loc[df["Personen"].isna(), "Personen"] = (
+        df["Prozent"] * 0.01 * df["Jahr"].map(d_pop_per_year.get)
+    ).round(0)
+
+    # calc percent from people, no rounding here because of Dorf calc
+    df.loc[df["Prozent"].isna(), "Prozent"] = (
+        100 * df["Personen"] / df["Jahr"].map(d_pop_per_year.get)
     )
+
+    # convert to village population (float without rounding here to prevent 2x rounding)
+    df["Dorf"] = pop / 100 * df["Prozent"]
+    return df
 
 
 def print_table_simple(
@@ -85,4 +85,27 @@ def print_table_complete(df: pd.DataFrame) -> None:
                 # width="large" # breaks mobile layout
             ),
         },
+    )
+
+
+def include_matomo_stats() -> None:
+    """Include Matomo access stats update JavaScript snippet."""
+    import streamlit.components.v1 as components
+
+    components.html(
+        """
+<script>
+var _paq = window._paq = window._paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var u="https://entorb.net/stats/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+    """,
+        height=0,
     )
