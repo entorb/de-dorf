@@ -23,17 +23,22 @@ POP_DORF = st.session_state.get("sel_pop", 2000)
 
 # text is copied from README.md
 st.markdown("""
-Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.646.000 Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen.
+Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.646.000 Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen. Datenquelle und Datum, siehe Tabelle unten.
+
+Viel Spaß damit wünscht Torben
 
 ### Mitmachen
 
-Hast Du weitere interessante Zahlen oder Aktualisierungen? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen.
+Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen beisteuern? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen und Verbesserungsvorschläge einreichen.
 """)  # noqa: E501
 
 df = pd.read_csv("data/population.tsv", sep="\t").astype(int).set_index("Jahr")
 d_pop_per_year = df.to_dict()["Einwohner"]
 
 df = pd.read_csv("data/data.tsv", sep="\t")
+
+# before sorting to keep custom group order
+groups = df["Gruppe"].unique().tolist()
 
 # calc people from percent
 df.loc[df["Personen"].isna(), "Personen"] = (
@@ -48,15 +53,56 @@ df.loc[df["Prozent"].isna(), "Prozent"] = (
 # convert to village population
 df["Dorf"] = POP_DORF / 100 * df["Prozent"]
 
-st.header("Kategorien")
-for group in df["Gruppe"].unique().tolist():
-    st.subheader(group)
-    df2 = df[df["Gruppe"] == group].sort_values("Dorf", ascending=False)
-    print_table_simple(df2)
+# sort after extracting the groups in custom order
+df = df.sort_values(["Gruppe", "Titel"])
 
 
 st.header("Alle Daten")
 print_table_complete(df)
+
+
+st.header("Kategorien")
+cols = st.columns((1, 5))
+sel_compact_layout = cols[0].toggle("kompaktes Layout", value=True)
+
+num_columns = 2 if sel_compact_layout else 1
+cols = st.columns(num_columns)
+i = 0
+for group in groups:
+    cols[i].subheader(group)
+    df2 = df[df["Gruppe"] == group]
+    print_table_simple(df2, cols[i], show_source=False)
+    i = (i + 1) % num_columns
+    if i == 0:
+        cols = st.columns(num_columns)
+
+
+st.header("Eigene Tabelle")
+
+num_columns = 6 if sel_compact_layout else 3
+cols = st.columns(num_columns)
+
+selects = []
+i = 0
+for group in groups:
+    selects.append(
+        cols[i].multiselect(
+            label=group,
+            options=df.query("Gruppe == @group")["Titel"].sort_values(),
+            key=f"sel_custom_table_{group}",
+        )
+    )
+    i = (i + 1) % num_columns
+
+dfs = [df.query("Titel in @sel") for sel in selects if sel]
+
+if len(dfs) > 0:
+    df2 = pd.concat(dfs)
+    num_columns = 2 if sel_compact_layout else 1
+    cols = st.columns(num_columns)
+
+    # print_table_complete(df2.sort_values(["Prozent", "Titel"], ascending=[False, True]))  # noqa: E501
+    print_table_simple(df2, col=cols[0], show_source=False)
 
 
 st.header("Einstellungen")
