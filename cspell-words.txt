@@ -30,6 +30,7 @@ pyenv
 pytest
 Quelle
 ruzv
+selectbox
 Statistiken
 Streamlit
 supervisorctl

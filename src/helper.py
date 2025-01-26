@@ -2,6 +2,7 @@
 
 import pandas as pd
 import streamlit as st
+from streamlit.delta_generator import DeltaGenerator
 
 
 def include_matomo_stats() -> None:
@@ -27,23 +28,30 @@ _paq.push(['enableLinkTracking']);
     )
 
 
-def print_table_simple(df: pd.DataFrame) -> None:
+def print_table_simple(
+    df: pd.DataFrame, col: DeltaGenerator, *, show_source: bool
+) -> None:
     """Display simple table of few columns."""
+    df = df.sort_values(["Prozent", "Titel"], ascending=[False, True])
     df["Dorf"] = df["Dorf"].round(0)
-    st.dataframe(
+    col_order = ["Titel", "Dorf"]
+    if show_source:
+        col_order.append("Quelle")
+    col.dataframe(
         df,
         hide_index=True,
         use_container_width=True,
-        column_order=["Titel", "Dorf"],  # , "Quelle", "Jahr"
+        column_order=col_order,
         column_config={
             "Title": st.column_config.Column("Title", width="small"),
             "Dorf": st.column_config.ProgressColumn(
-                format="%d", min_value=0, max_value=df["Dorf"].max(), width="large"
+                label="Personen im Dorf",
+                format="%d",
+                min_value=0,
+                max_value=df["Dorf"].max(),
+                width="large",
             ),
-            # "Quelle": st.column_config.LinkColumn(
-            #     "Quelle", display_text="Link"
-            # ),
-            # "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
+            "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
         },
     )
 
@@ -53,7 +61,7 @@ def print_table_complete(df: pd.DataFrame) -> None:
     df["Prozent"] = df["Prozent"].round(1)
     df["Dorf"] = df["Dorf"].round(1)
     st.dataframe(
-        df.sort_values(["Gruppe", "Titel"]),
+        df,
         hide_index=True,
         use_container_width=True,
         column_order=[
@@ -62,13 +70,14 @@ def print_table_complete(df: pd.DataFrame) -> None:
             "Personen",
             "Prozent",
             "Dorf",
-            "Jahr",
             "Quelle",
+            "Jahr",
             "Kommentar",
-        ],  # , "Quelle", "Jahr"
+        ],
         column_config={
             "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
             "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
+            "Dorf": st.column_config.NumberColumn("Im Dorf", format="%.1f"),
             "Prozent": st.column_config.ProgressColumn(
                 format="%.1f", min_value=0, max_value=100, width="large"
             ),
