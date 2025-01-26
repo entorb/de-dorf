@@ -1,7 +1,11 @@
 """Main file."""
 
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
+
+from helper import include_matomo_stats
 
 POP_DORF = 2000
 
@@ -9,6 +13,10 @@ POP_DORF = 2000
 st.set_page_config(
     page_title="DE-Dorf", page_icon=":derelict_house_building:", layout="wide"
 )
+
+if Path("/var/www/virtual/entorb/html").exists():
+    include_matomo_stats()
+
 
 st.title("Deutschland als Dorf")
 
