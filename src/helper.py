@@ -49,7 +49,7 @@ def print_table_simple(
                 format="%d",
                 min_value=0,
                 max_value=df["Dorf"].max(),
-                width="large",
+                # width="large", # breaks mobile layout
             ),
             "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
         },
@@ -79,7 +79,10 @@ def print_table_complete(df: pd.DataFrame) -> None:
             "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
             "Dorf": st.column_config.NumberColumn("Im Dorf", format="%.1f"),
             "Prozent": st.column_config.ProgressColumn(
-                format="%.1f", min_value=0, max_value=100, width="large"
+                format="%.1f",
+                min_value=0,
+                max_value=100,
+                # width="large" # breaks mobile layout
             ),
         },
     )

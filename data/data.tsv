@@ -1,6 +1,6 @@
 Gruppe	Titel	Personen	Prozent	Jahr	Kommentar	Quelle
 Allgemein	Ausländeranteil	12324195		2022		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
-Allgemein	Millionäre	1646000		2023		https://www.tagesschau.de/wirtschaft/reiche-vermoegen-studie-100.html
+Allgemein	Millionäre	1646000		2023	Anlagefähiges Vermögen von mindestens einer Million Dollar	https://www.tagesschau.de/wirtschaft/reiche-vermoegen-studie-100.html
 Allgemein	Wohnen zur Miete		52.4	2023		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
 Allgemein	Wohnungslos	439500		2023		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Soziales/Wohnungslosigkeit/_inhalt.html
 Allgemein	geflüchtete Syrer	712000		2023		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_N062_12.html
@@ -15,7 +15,7 @@ Berufe	Handwerk	5400000		2021		https://www.destatis.de/DE/Themen/Branchen-Untern
 Berufe	Studenten	2900000		2022		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Hochschulen/_inhalt.html
 Berufe	Beamte	1748600		2022		https://www.destatis.de/DE/Themen/Staat/Oeffentlicher-Dienst/Tabellen/beschaeftigte-geschlecht.html?nn=212936
 Berufe	Doktortitel	862000		2019		https://www.academics.de/ratgeber/promotion-statistik
-Berufe	Arbeitskräfte in landwirtschaftlichen Betrieben	665400		2020	ohne Saisonarbeiter	https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftszaehlung2020/Ergebnisse/Tabellen/arbeitskraefte-in-landwirtschaftlichen-betrieben.html
+Berufe	Landwirtschaft	665400		2020	Arbeitskräfte in landwirtschaftlichen Betrieben, ohne Saisonarbeiter	https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftszaehlung2020/Ergebnisse/Tabellen/arbeitskraefte-in-landwirtschaftlichen-betrieben.html
 Berufe	Ärzte	416120		2021		https://www.bundesaerztekammer.de/baek/ueber-uns/aerztestatistik/2021#
 Berufe	Polizisten	279400		2022		https://de.statista.com/statistik/daten/studie/1246865/umfrage/beschaeftigte-im-aufgabenbereich-polizei-nach-bundeslaendern/
 Berufe	Soldaten	170500		2022		https://www.destatis.de/DE/Themen/Staat/Oeffentlicher-Dienst/Tabellen/beschaeftigte-geschlecht.html?nn=212936
@@ -34,7 +34,7 @@ Partnerschaft	Transsexuell		0.1	2022		https://dgti.org/2021/08/12/zahlenspiele/
 Partnerschaft	Hochzeiten	781486		2022		https://de.statista.com/statistik/daten/studie/1323/umfrage/eheschliessungen-in-deutschland/
 Partnerschaft	In gleichgeschlechtlicher Ehe	20086		2022		https://www.destatis.de/DE/Themen/Querschnitt/Demografischer-Wandel/Hintergruende-Auswirkungen/demografie-ehen.html
 Mobilität	Autos zugelassen	48800000		2022		https://www.tagesschau.de/wirtschaft/verbraucher/pkw-deutschland-statistisches-bundesamt-100.html
-Mobilität	Deutschlandticket (Stand 21.06.2023)	9600000		2023		https://www.zeit.de/mobilitaet/2023-06/49-euro-ticket-deutschlandticket-fahrgaeste-anstieg
+Mobilität	Deutschlandticket	13100000		2024	Stand Okt.'24	https://www.zeit.de/mobilitaet/2023-06/49-euro-ticket-deutschlandticket-fahrgaeste-anstieg
 Mobilität	Bahncard	5000000		2022		https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Wieder-ueber-5-Millionen-DB-mit-Rekordzahlen-bei-BahnCard-Neuverkaeufen--8791886
 Mobilität	Mitglieder ADAC	21800000		2023		https://www.adac.de/der-adac/verein/corporate-news/mitgliederzahl/
 Mobilität	Mitglieder ADFC	230000		2023		https://www.adfc.de/ueber-uns
