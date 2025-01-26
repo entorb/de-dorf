@@ -7,8 +7,6 @@ import streamlit as st
 
 from helper import include_matomo_stats
 
-POP_DORF = 2000
-
 # must be first Streamlit command
 st.set_page_config(
     page_title="DE-Dorf", page_icon=":derelict_house_building:", layout="wide"
@@ -19,6 +17,9 @@ if Path("/var/www/virtual/entorb/html").exists():
 
 
 st.title("Deutschland als Dorf")
+
+# population for village, defaults to 2000
+POP_DORF = st.session_state.get("sel_pop", 2000)
 
 # text is copied from README.md
 st.markdown("""
@@ -87,3 +88,7 @@ st.dataframe(
         ),
     },
 )
+
+
+st.header("Einstellungen")
+sel_pop = st.slider("Anzahl Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
