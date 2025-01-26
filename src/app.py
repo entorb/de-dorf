@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from helper import include_matomo_stats
+from helper import include_matomo_stats, print_table_complete, print_table_simple
 
 # must be first Streamlit command
 st.set_page_config(
@@ -52,42 +52,11 @@ st.header("Kategorien")
 for group in df["Gruppe"].unique().tolist():
     st.subheader(group)
     df2 = df[df["Gruppe"] == group].sort_values("Dorf", ascending=False)
-    df2["Dorf"] = df["Dorf"].round(0)
-    st.dataframe(
-        df2,
-        hide_index=True,
-        column_config={
-            "Title": st.column_config.Column("Title", width="small"),
-            "Dorf": st.column_config.ProgressColumn(
-                format="%d", min_value=0, max_value=df2["Dorf"].max(), width="large"
-            ),
-            "Quelle": st.column_config.LinkColumn(
-                "Quelle", display_text="Link", width="small"
-            ),
-            "Jahr": st.column_config.NumberColumn("Jahr", format="%d", width="small"),
-        },
-        column_order=["Titel", "Dorf", "Quelle"],  # , "Jahr"
-        use_container_width=True,
-    )
+    print_table_simple(df2)
 
 
 st.header("Alle Daten")
-df["Prozent"] = df["Prozent"].round(1)
-df["Dorf"] = df["Dorf"].round(1)
-st.dataframe(
-    df.sort_values(["Gruppe", "Titel"]),
-    hide_index=True,
-    use_container_width=True,
-    column_config={
-        "Quelle": st.column_config.LinkColumn(
-            "Quelle", display_text="Link", width="small"
-        ),
-        "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
-        "Prozent": st.column_config.ProgressColumn(
-            format="%.1f", min_value=0, max_value=100, width="large"
-        ),
-    },
-)
+print_table_complete(df)
 
 
 st.header("Einstellungen")

@@ -1,5 +1,8 @@
 """Helper Functions."""
 
+import pandas as pd
+import streamlit as st
+
 
 def include_matomo_stats() -> None:
     """Include Matomo access stats update JavaScript snippet."""
@@ -21,4 +24,53 @@ _paq.push(['enableLinkTracking']);
 </script>
     """,
         height=0,
+    )
+
+
+def print_table_simple(df: pd.DataFrame) -> None:
+    """Display simple table of few columns."""
+    df["Dorf"] = df["Dorf"].round(0)
+    st.dataframe(
+        df,
+        hide_index=True,
+        use_container_width=True,
+        column_order=["Titel", "Dorf"],  # , "Quelle", "Jahr"
+        column_config={
+            "Title": st.column_config.Column("Title", width="small"),
+            "Dorf": st.column_config.ProgressColumn(
+                format="%d", min_value=0, max_value=df["Dorf"].max(), width="large"
+            ),
+            # "Quelle": st.column_config.LinkColumn(
+            #     "Quelle", display_text="Link"
+            # ),
+            # "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
+        },
+    )
+
+
+def print_table_complete(df: pd.DataFrame) -> None:
+    """Display complete data table."""
+    df["Prozent"] = df["Prozent"].round(1)
+    df["Dorf"] = df["Dorf"].round(1)
+    st.dataframe(
+        df.sort_values(["Gruppe", "Titel"]),
+        hide_index=True,
+        use_container_width=True,
+        column_order=[
+            "Gruppe",
+            "Titel",
+            "Personen",
+            "Prozent",
+            "Dorf",
+            "Jahr",
+            "Quelle",
+            "Kommentar",
+        ],  # , "Quelle", "Jahr"
+        column_config={
+            "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
+            "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
+            "Prozent": st.column_config.ProgressColumn(
+                format="%.1f", min_value=0, max_value=100, width="large"
+            ),
+        },
     )
