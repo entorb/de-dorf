@@ -2,7 +2,7 @@
 
 Dies ist der Quelltext zu <https://entorb.net/de-dorf/>.
 
-Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.646.000 Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen. Datenquelle und Datum, siehe Tabelle unten.
+Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.6 Mill. Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen.
 
 ## Mitmachen
 
