@@ -9,7 +9,9 @@ from helper import include_matomo_stats, print_table_complete, print_table_simpl
 
 # must be first Streamlit command
 st.set_page_config(
-    page_title="DE-Dorf", page_icon=":derelict_house_building:", layout="wide"
+    page_title="Deutschland als Dorf",
+    page_icon=":derelict_house_building:",
+    layout="wide",
 )
 
 if Path("/var/www/virtual/entorb/html").exists():
@@ -23,7 +25,7 @@ POP_DORF = st.session_state.get("sel_pop", 2000)
 
 # text is copied from README.md
 st.markdown("""
-Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.646.000 Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen. Datenquelle und Datum, siehe Tabelle unten.
+Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.6 Mill. Millionäre", greifbarer zu machen, habe ich diese Zahlen auf ein Dorf mit 2000 Einwohnern umgerechnet. Das hilft mir, ein besseres Verständnis für die Welt außerhalb meiner eigenen sozialen Blase zu entwickeln. Das fiktive Dorf hätte dann 39 Millionäre, 41 geflüchtete Ukrainer und Syrer und 160 homo- oder bisexuelle Menschen.
 
 Viel Spaß damit wünscht Torben
 
@@ -63,7 +65,7 @@ print_table_complete(df)
 
 st.header("Kategorien")
 cols = st.columns((1, 5))
-sel_compact_layout = cols[0].toggle("kompaktes Layout", value=True)
+sel_compact_layout = cols[0].toggle("kompaktes Layout", value=False)
 
 num_columns = 2 if sel_compact_layout else 1
 cols = st.columns(num_columns)
@@ -73,7 +75,7 @@ for group in groups:
     df2 = df[df["Gruppe"] == group]
     print_table_simple(df2, cols[i], show_source=False)
     i = (i + 1) % num_columns
-    if i == 0:
+    if i == 0 and sel_compact_layout is True:
         cols = st.columns(num_columns)
 
 
