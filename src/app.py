@@ -5,7 +5,12 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from helper import include_matomo_stats, print_table_complete, print_table_simple
+from helper import (
+    include_matomo_stats,
+    print_table_complete,
+    print_table_simple,
+    read_data,
+)
 
 # must be first Streamlit command
 st.set_page_config(
@@ -20,8 +25,6 @@ if Path("/var/www/virtual/entorb/html").exists():
 
 st.title("Deutschland als Dorf")
 
-# population for village, defaults to 2000
-POP_DORF = st.session_state.get("sel_pop", 2000)
 
 # text is copied from README.md
 st.markdown("""
@@ -34,30 +37,13 @@ Viel Spaß damit wünscht Torben
 Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen beisteuern? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen und Verbesserungsvorschläge einreichen.
 """)  # noqa: E501
 
-df = pd.read_csv("data/population.tsv", sep="\t").astype(int).set_index("Jahr")
-d_pop_per_year = df.to_dict()["Einwohner"]
 
-df = pd.read_csv("data/data.tsv", sep="\t")
-
-# before sorting to keep custom group order
+# population for village, defaults to 2000
+pop = st.session_state.get("sel_pop", 2000)
+df = read_data(pop)
 groups = df["Gruppe"].unique().tolist()
-
-# calc people from percent
-df.loc[df["Personen"].isna(), "Personen"] = (
-    df["Prozent"] * 0.01 * df["Jahr"].map(d_pop_per_year.get)
-).round(0)
-
-# calc percent from people, no rounding here because of Dorf calc
-df.loc[df["Prozent"].isna(), "Prozent"] = (
-    100 * df["Personen"] / df["Jahr"].map(d_pop_per_year.get)
-)
-
-# convert to village population
-df["Dorf"] = POP_DORF / 100 * df["Prozent"]
-
 # sort after extracting the groups in custom order
 df = df.sort_values(["Gruppe", "Titel"])
-
 
 st.header("Alle Daten")
 print_table_complete(df)
