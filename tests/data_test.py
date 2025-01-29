@@ -4,10 +4,11 @@ from pathlib import Path
 
 
 def test_data_columns() -> None:
-    with Path("data/data.tsv").open(mode="r", encoding="utf-8") as fh:
-        csv_reader = csv.DictReader(fh, delimiter="\t")
-        for row in csv_reader:
-            assert len(row) == 7, len(row)
+    cont = Path("data/data.tsv").read_text().strip()
+    assert "\r" not in cont
+    for line in cont.split("\n"):
+        columns = line.split("\t")
+        assert len(columns) == 7, line
 
 
 def test_data_no_whitespaces() -> None:
