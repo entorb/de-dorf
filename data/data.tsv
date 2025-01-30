@@ -1,6 +1,7 @@
 Gruppe	Titel	Personen	Prozent	Jahr	Kommentar	Quelle
 Allgemein	Ausländeranteil	12324195		2022		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
 Allgemein	Millionäre	1646000		2023	Anlagefähiges Vermögen von mindestens einer Million Dollar	https://www.tagesschau.de/wirtschaft/reiche-vermoegen-studie-100.html
+Allgemein	Einkommensmillionäre	29345		2023		https://www.destatis.de/DE/Themen/Staat/Steuern/Lohnsteuer-Einkommensteuer/_inhalt.html
 Allgemein	Wohnen zur Miete		52.4	2023		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
 Allgemein	Wohnungslos	439500		2023		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Soziales/Wohnungslosigkeit/_inhalt.html
 Allgemein	geflüchtete Syrer	712000		2023		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_N062_12.html
@@ -10,7 +11,10 @@ Demografie	65+	18708597		2023		https://www-genesis.destatis.de/datenbank/online/
 Demografie	Kinder geboren	689834		2023		https://www-genesis.destatis.de/datenbank/online/table/12411-0005/
 Demografie	Todesfälle	1028206		2023	vorläufig	https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Sterbefaelle-Lebenserwartung/Tabellen/sonderauswertung-sterbefaelle.html?nn=209016
 Demografie	0-17	13974170		2023		https://www-genesis.destatis.de/datenbank/online/table/12411-0005/
-Berufe	Erwerbstätig	45600000		2022		https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/01/PD23_001_13321.html
+Berufe	Erwerbstätige	45600000		2022		https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/01/PD23_001_13321.html
+Berufe	Steuerpflichtige	42000000		2023	68% der Renten waren auch steuerpflichtig	https://www.destatis.de/DE/Themen/Staat/Steuern/Lohnsteuer-Einkommensteuer/_inhalt.html
+Berufe	Rentenempfänger	22100000		2023		https://www.destatis.de/DE/Themen/Staat/Steuern/Lohnsteuer-Einkommensteuer/_inhalt.html
+Berufe	Arbeitslose	2787112		2024		https://www.destatis.de/DE/Themen/Wirtschaft/Konjunkturindikatoren/Lange-Reihen/Arbeitsmarkt/lrarb003ga.html
 Berufe	Handwerk	5400000		2021		https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Handwerk/aktuell-struktur-handwerk.html
 Berufe	Studenten	2900000		2022		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Hochschulen/_inhalt.html
 Berufe	Beamte	1748600		2022		https://www.destatis.de/DE/Themen/Staat/Oeffentlicher-Dienst/Tabellen/beschaeftigte-geschlecht.html?nn=212936
