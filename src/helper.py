@@ -58,14 +58,14 @@ def print_table_simple(
 
 def print_table_complete(df: pd.DataFrame) -> None:
     """Display complete data table."""
-    df["Prozent"] = df["Prozent"].round(1)
+    df["Prozent"] = df["Prozent"].round(2)
     df["Dorf"] = df["Dorf"].round(1)
     st.dataframe(
         df,
         hide_index=True,
         use_container_width=True,
         column_order=[
-            "Gruppe",
+            "Kategorie",
             "Titel",
             "Personen",
             "Prozent",
@@ -79,7 +79,7 @@ def print_table_complete(df: pd.DataFrame) -> None:
             "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
             "Dorf": st.column_config.NumberColumn("Im Dorf", format="%.1f"),
             "Prozent": st.column_config.ProgressColumn(
-                format="%.1f",
+                format="%.2f",
                 min_value=0,
                 max_value=100,
                 # width="large" # breaks mobile layout
