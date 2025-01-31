@@ -25,10 +25,15 @@ def test_data_percent_or_pop() -> None:
         csv_reader = csv.DictReader(fh, delimiter="\t")
         for row in csv_reader:
             if row["Personen"] != "":
+                assert "." not in row["Personen"], row["Personen"]
+                assert "," not in row["Personen"], row["Personen"]
+                assert " " not in row["Personen"], row["Personen"]
                 assert row["Prozent"] == "", row["Prozent"]
                 assert int(row["Personen"]) > 0, row["Personen"]
                 assert int(row["Personen"]) < 100_000_000, row["Personen"]
             if row["Prozent"] != "":
+                assert "," not in row["Prozent"], row["Prozent"]
+                assert " " not in row["Prozent"], row["Prozent"]
                 assert row["Personen"] == "", row["Personen"]
                 assert float(row["Prozent"]) > 0, row["Prozent"]
 
