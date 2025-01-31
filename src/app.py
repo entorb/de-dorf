@@ -96,6 +96,11 @@ if len(dfs) > 0:
 st.header("Einstellungen")
 sel_pop = st.slider("Anzahl Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
 
+# read and drop title line (# )
+cont = Path("Weitere_Zahlen.md").read_text().split("\n", 1)[1]
+
+st.markdown(cont)
+
 # toggle_dark = st.toggle("Dark Layout", value=True)
 # if st.get_option("theme.base") == "light" and toggle_dark:
 #     st._config.set_option("theme.base", "dark")  # type: ignore
