@@ -41,9 +41,9 @@ Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen bei
 # population for village, defaults to 2000
 pop = st.session_state.get("sel_pop", 2000)
 df = read_data(pop)
-groups = df["Gruppe"].unique().tolist()
+categories = df["Kategorie"].unique().tolist()
 # sort after extracting the groups in custom order
-df = df.sort_values(["Gruppe", "Titel"])
+df = df.sort_values(["Kategorie", "Titel"])
 
 st.header("Alle Daten")
 print_table_complete(df)
@@ -56,9 +56,9 @@ sel_compact_layout = cols[0].toggle("kompaktes Layout", value=False)
 num_columns = 2 if sel_compact_layout else 1
 cols = st.columns(num_columns)
 i = 0
-for group in groups:
-    cols[i].subheader(group)
-    df2 = df[df["Gruppe"] == group]
+for cat in categories:
+    cols[i].subheader(cat)
+    df2 = df[df["Kategorie"] == cat]
     print_table_simple(df2, cols[i], show_source=False)
     i = (i + 1) % num_columns
     if i == 0 and sel_compact_layout is True:
@@ -72,12 +72,12 @@ cols = st.columns(num_columns)
 
 selects = []
 i = 0
-for group in groups:
+for cat in categories:
     selects.append(
         cols[i].multiselect(
-            label=group,
-            options=df.query("Gruppe == @group")["Titel"].sort_values(),
-            key=f"sel_custom_table_{group}",
+            label=cat,
+            options=df.query("Kategorie == @cat")["Titel"].sort_values(),
+            key=f"sel_custom_table_{cat}",
         )
     )
     i = (i + 1) % num_columns
