@@ -11,11 +11,11 @@ dropna
 Einwohner
 entorb
 fillna
-Gruppe
 iloc
 isna
 isort
 Jahr
+Kategorie
 Kommentar
 matomo
 Matomo

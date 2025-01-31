@@ -6,6 +6,7 @@ echo copying
 python3 scripts/config_convert.py
 rsync -uz .streamlit/config-prod.toml entorb@entorb.net:streamlit-de-dorf/.streamlit/config.toml
 rsync -uz requirements.txt entorb@entorb.net:streamlit-de-dorf/
+rsync -uz Weitere_Zahlen.md entorb@entorb.net:streamlit-de-dorf/
 rsync -ruzv --no-links --delete --delete-excluded --exclude __pycache__ src/ entorb@entorb.net:streamlit-de-dorf/src/
 rsync -ruzv --no-links --delete --delete-excluded data/*.tsv entorb@entorb.net:streamlit-de-dorf/data/
 
