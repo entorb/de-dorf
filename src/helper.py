@@ -88,6 +88,24 @@ def print_table_complete(df: pd.DataFrame) -> None:
     )
 
 
+@st.cache_data(ttl="1d")
+def read_flaechennutzung() -> pd.DataFrame:
+    """Read and prepare the data of Flächennutzung (cached)."""
+    df = pd.read_csv("data/flaechennutzung.csv", sep=";")
+    df = df.drop(columns=["Code", "Jahr", "Quelle"])
+
+    last = df.tail(1)
+    qkm_total = last["qkm"].to_list()[0]
+    df = df.drop(last.index)
+    df["Prozent"] = (100 * df["qkm"] / qkm_total).round(2)
+    # df = df.sort_values(
+    #     ["Kategorie 1", "Kategorie 2", "Prozent"], ascending=[True, True, False]
+    # )
+    # df = df.sort_values("Prozent", ascending=False)
+
+    return df
+
+
 def include_matomo_stats() -> None:
     """Include Matomo access stats update JavaScript snippet."""
     import streamlit.components.v1 as components
