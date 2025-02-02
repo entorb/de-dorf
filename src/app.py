@@ -10,6 +10,7 @@ from helper import (
     print_table_complete,
     print_table_simple,
     read_data,
+    read_flaechennutzung,
 )
 
 # must be first Streamlit command
@@ -96,9 +97,32 @@ if len(dfs) > 0:
 st.header("Einstellungen")
 sel_pop = st.slider("Anzahl Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
 
+st.header("Flächennutzung")
+st.markdown(
+    "Quelle: Daten großteils vom [Destatis, 2023](https://www-genesis.destatis.de/datenbank/online/statistic/33111/table/33111-0007/search/s/RmwlQzMlQTRjaGVubnV0enVuZw==), andere Quellen sind [hier](https://github.com/entorb/de-dorf/blob/main/data/flaechennutzung.tsv) hinterlegt. Ergänzungen gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/flaechennutzung.tsv) vorschlagen."  # noqa: E501
+)
+df = read_flaechennutzung()
+
+st.dataframe(
+    df,
+    hide_index=True,
+    use_container_width=True,
+    column_config={
+        # "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
+        # "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),
+        "qkm": st.column_config.NumberColumn("qkm", format="%.2f"),
+        "Prozent": st.column_config.ProgressColumn(
+            format="%.2f",
+            min_value=0,
+            max_value=100,
+            # width="large" # breaks mobile layout
+        ),
+    },
+)
+
+
 # read and drop title line (# )
 cont = Path("Weitere_Zahlen.md").read_text().split("\n", 1)[1]
-
 st.markdown(cont)
 
 # toggle_dark = st.toggle("Dark Layout", value=True)
