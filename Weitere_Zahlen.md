@@ -2,6 +2,8 @@
 
 ## Weitere Zahlen
 
+Ergänzungen gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/Weitere_Zahlen.md) vorschlagen.
+
 ### Demographie
 
 Durchschnittsalter 44,6 Jahre [2023](https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Tabellen/bevoelkerungsstand-gebietsstand-werte.html)
