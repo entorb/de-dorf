@@ -37,3 +37,13 @@ Produktion Fahrrad- und Elektrorad:
 ### Partnerschaften
 
 277 Scheidungen pro 1000 Ehen [2023](https://www.destatis.de/DE/Themen/Querschnitt/Demografischer-Wandel/Hintergruende-Auswirkungen/demografie-ehen.html)
+
+### Todesursachen
+
+155 Frauen getötet von ihrem aktuellen oder früheren Partner [2023](https://www.frauen-gegen-gewalt.de/de/infothek/toetung-von-frauen-femizid/merkmale-und-tatsachen.html)
+
+2839 Verkehrstote [2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/07/PD24_261_46241.html)
+
+* Auf Landstraßen wurden 24 % aller Unfälle mit Personenschaden, aber 58 % der Verkehrstoten gezählt
+* 78 % der Getöteten auf Landstraßen waren mit Pkw oder Kraftrad unterwegs
+* 66 % der Verkehrstoten innerorts waren zu Fuß oder mit dem Fahrrad unterwegs
