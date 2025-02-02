@@ -50,11 +50,32 @@ def test_pop_no_whitespaces() -> None:
 def test_pop_data_for_all_years() -> None:
     with Path("data/population.tsv").open(mode="r", encoding="utf-8") as fh:
         csv_reader = csv.DictReader(fh, delimiter="\t")
+        # read pop data, assert convert to int and store as dict per year
         d = {}
         for row in csv_reader:
             d[int(row["Jahr"])] = int(row["Einwohner"])
 
+    # assert all years are in the dict
     with Path("data/data.tsv").open(mode="r", encoding="utf-8") as fh:
         csv_reader = csv.DictReader(fh, delimiter="\t")
         for row in csv_reader:
             assert int(row["Jahr"]) in d, row["Jahr"]
+
+
+def test_flaechennutzung_columns() -> None:
+    cont = Path("data/flaechennutzung.csv").read_text().strip()
+    assert "\r" not in cont
+    for line in cont.split("\n"):
+        columns = line.split(";")
+        assert len(columns) == 7, line
+
+
+def test_flaechennutzung_no_whitespaces() -> None:
+    with Path("data/flaechennutzung.csv").open(mode="r", encoding="utf-8") as fh:
+        csv_reader = csv.DictReader(fh, delimiter=";")
+        for row in csv_reader:
+            for col in row:
+                assert row[col] == row[col].strip(), f"'{row[col]}'"
+            assert "," not in row["qkm"], row["qkm"]
+            # assert convert to float
+            assert float(row["qkm"]), row["qkm"]
