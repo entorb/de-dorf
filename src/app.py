@@ -44,7 +44,8 @@ pop = st.session_state.get("sel_pop", 2000)
 df = read_data(pop)
 categories = df["Kategorie"].unique().tolist()
 # sort after extracting the groups in custom order
-df = df.sort_values(["Kategorie", "Titel"])
+df = df.sort_values(["Kategorie", "Prozent"], ascending=[True, False])
+
 
 st.header("Alle Daten")
 print_table_complete(df)
@@ -96,6 +97,7 @@ if len(dfs) > 0:
 
 st.header("Einstellungen")
 sel_pop = st.slider("Anzahl Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
+
 
 st.header("Flächennutzung")
 st.markdown(
