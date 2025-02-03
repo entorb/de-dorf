@@ -51,8 +51,22 @@ Straftaten gegen Frauen und Mädchen [2023](https://www.bka.de/DE/Presse/Listens
 
 155 Frauen getötet von ihrem aktuellen oder früheren Partner [2023](https://www.frauen-gegen-gewalt.de/de/infothek/toetung-von-frauen-femizid/merkmale-und-tatsachen.html)
 
+761 Gruppenvergewaltigungen [2023](https://www.bundestag.de/presse/hib/kurzmeldungen-1007380) und Anteil der nichtdeutschen Tatverdächtigen von 48%
+
 2839 Verkehrstote [2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/07/PD24_261_46241.html)
 
-* Auf Landstraßen wurden 24 % aller Unfälle mit Personenschaden, aber 58 % der Verkehrstoten gezählt
-* 78 % der Getöteten auf Landstraßen waren mit Pkw oder Kraftrad unterwegs
-* 66 % der Verkehrstoten innerorts waren zu Fuß oder mit dem Fahrrad unterwegs
+* Auf Landstraßen wurden 24% aller Unfälle mit Personenschaden, aber 58% der Verkehrstoten gezählt
+* 78% der Getöteten auf Landstraßen waren mit Pkw oder Kraftrad unterwegs
+* 66% der Verkehrstoten innerorts waren zu Fuß oder mit dem Fahrrad unterwegs
+
+Steuerhinterziehung [2023](https://www.bundesfinanzministerium.de/Monatsberichte/Ausgabe/2024/10/Inhalte/Kapitel-3-Analysen/3-1-verfolgung-von-steuerstraftaten-2023.html)
+
+* 47900 Strafverfahren wegen Steuerstraftaten bearbeitet
+* 5000 Bußgeldverfahren abgeschlossen, Bußgelder in einer Gesamthöhe von circa 16 Mio. Euro festgesetzt
+* 34600 Fälle erledigte die Steuerfahndung. Mehrsteuern von 2,5 Mrd. Euro festgestellt und Freiheitsstrafen in einem Gesamtumfang von 1.460 Jahren verhängt.
+
+Drogentote
+
+* 127000 Tote jährlich durch die Folgen von Tabakkonsum [2023](https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/r/rauchen.html)
+* 40000 Tote jährlich durch Folgen von Alkoholkonsum [2020](https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/a/alkohol.html)
+* 2227 drogenbedingte Todesfälle [2023](https://www.bundesdrogenbeauftragter.de/presse/detail/zahl-der-drogentoten-in-deutschland-weiter-angestiegen/)
