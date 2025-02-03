@@ -28,7 +28,6 @@ Demografie	Todesfälle	1028206		2023	vorläufig	https://www.destatis.de/DE/Theme
 Finanzen	Armutsgefährdung	17600000		2024	weniger als 60 % des Medianeinkommen	https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/_inhalt.html
 Finanzen	Bürgergeldempfänger	1600000		2023		https://de.statista.com/statistik/daten/studie/666690/umfrage/leistungsempfaenger-von-arbeitslosengeld-ii-im-monat-in-deutschland/
 Finanzen	Einkommensmillionäre	29345		2023		https://www.destatis.de/DE/Themen/Staat/Steuern/Lohnsteuer-Einkommensteuer/_inhalt.html
-Finanzen	Maximalsanktionierte BGE	1258		2023	monatlicher Mittelwert selbst errechnet	https://www.tagesschau.de/inland/innenpolitik/buergergeld-162.html
 Finanzen	Millionäre	1646000		2023	Anlagefähiges Vermögen von mindestens einer Million Dollar	https://www.tagesschau.de/wirtschaft/reiche-vermoegen-studie-100.html
 Gesundheit	Alkoholanhängig	1600000		2021		https://www.bundesgesundheitsministerium.de/themen/praevention/gesundheitsgefahren/sucht-und-drogen.html
 Gesundheit	Blind oder hochgradig sehbehindert	109260		2021	Nur mit Antrag auf Schwerbehinderung, daher Realität höher	https://www.rehadat-statistik.de/statistiken/behinderung/behinderungsarten/blindheit-und-sehbehinderung/
@@ -63,6 +62,11 @@ Sport	Mitglieder DAV	1520381		2023		https://www.alpenverein.de/verband/ueber-den
 Sport	Mitglieder DFB	7364775		2023		https://www.dfb.de/verbandsstruktur/mitglieder/statistiken-der-vorjahre/
 Sport	Mitglieder DTB	4300000		2023		https://www.dtb.de/der-verband/verbandsstruktur/mitglieder-im-dtb
 Sport	Mitglieder Fitnessstudio	11300000		2023		https://de.statista.com/statistik/daten/studie/5966/umfrage/mitglieder-der-deutschen-fitnessclubs/
+Straftaten Jahr	Autodiebstahl	15924		2023	laut Kriminalstatistik	https://www.bka.de/DE/Presse/Listenseite_Pressemitteilungen/2024/Presse2024/241010_BLB_Kfz-Kriminalit%C3%A4t2023.html
+Straftaten Jahr	Fahrraddiebstahl	264000		2023	laut Kriminalstatistik	https://www.gdv.de/gdv/statistik/fahrraddiebstahl-statistik-versicherung
+Straftaten Jahr	Häusliche Gewalt gegen Frauen und Mädchen	180715		2023		https://www.bka.de/DE/Presse/Listenseite_Pressemitteilungen/2024/Presse2024/241119_PM_BLB_Straftaten_gegen_Frauen.html
+Straftaten Jahr	Kindesmissbrauch	19774		2023	Sexualdelikte gegen Kinder und Jugendliche	https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/07/blb-bka-mikiju2023.html
+Straftaten Jahr	Sexualstraftaten gegen Frauen und Mädchen	52330		2023		https://www.bka.de/DE/Presse/Listenseite_Pressemitteilungen/2024/Presse2024/241119_PM_BLB_Straftaten_gegen_Frauen.html
 Wahl 2021	Nicht-Wähler	14318263		2021	Wahlberechtigte-Wähler	https://www.bpb.de/kurz-knapp/zahlen-und-fakten/bundestagswahlen/bundestagswahlen/2021/ergebnisse/bund-99.html
 Wahl 2021	Wahlberechtigte	61172771		2021		https://www.bpb.de/kurz-knapp/zahlen-und-fakten/bundestagswahlen/
 Wahl 2021	Wähler	46854508		2021		https://www.bundeswahlleiterin.de/bundestagswahlen/2021/ergebnisse/bund-99.html
