@@ -32,8 +32,8 @@ def print_table_simple(
     df: pd.DataFrame, col: DeltaGenerator, *, show_source: bool
 ) -> None:
     """Display simple table of few columns."""
-    df = df.sort_values(["Prozent", "Titel"], ascending=[False, True])
-    df["Dorf"] = df["Dorf"].round(0)
+    df = df.sort_values(["Dorf", "Titel"], ascending=[False, True])
+    df["Dorf"] = df["Dorf"].round(1)
     col_order = ["Titel", "Dorf"]
     if show_source:
         col_order.append("Quelle")
@@ -46,7 +46,7 @@ def print_table_simple(
             "Title": st.column_config.Column("Title", width="small"),
             "Dorf": st.column_config.ProgressColumn(
                 label="Personen im Dorf",
-                format="%d",
+                format="%.1f",
                 min_value=0,
                 max_value=df["Dorf"].max(),
                 # width="large", # breaks mobile layout
