@@ -19,6 +19,7 @@ Kategorie
 Kommentar
 matomo
 Matomo
+maximalsanktionierte
 Menke
 noqa
 notna

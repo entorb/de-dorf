@@ -14,6 +14,8 @@ Durchschnittsgehalt Jahresbrutto 50250 € mit Median 43750 € [2024](https://w
 
 2.3% der Steuerpflichtigen leisten 25% der Einkommenssteuer [2018](https://www.iwkoeln.de/presse/pressemitteilungen/martin-beznoska-reiche-tragen-den-loewenanteil.html)
 
+1258 maximalsanktionierte Bürgergeldempfänger [2023](https://www.tagesschau.de/inland/innenpolitik/buergergeld-162.html)
+
 ### Mobilität
 
 Pkw-Neuzulassungen 2,84 Millionen [2023](https://www.kba.de/DE/Statistik/Fahrzeuge/Neuzulassungen/neuzulassungen_node.html)
@@ -38,7 +40,14 @@ Produktion Fahrrad- und Elektrorad:
 
 277 Scheidungen pro 1000 Ehen [2023](https://www.destatis.de/DE/Themen/Querschnitt/Demografischer-Wandel/Hintergruende-Auswirkungen/demografie-ehen.html)
 
-### Todesursachen
+### Straftaten und Todesursachen
+
+Straftaten gegen Frauen und Mädchen [2023](https://www.bka.de/DE/Presse/Listenseite_Pressemitteilungen/2024/Presse2024/241119_PM_BLB_Straftaten_gegen_Frauen.html)
+
+* 360 Mädchen und Frauen Opfer von Tötungsdelikten
+* 578 Mädchen und Frauen Opfer von versuchten Tötungsdelikten
+* 52330 Frauen und Mädchen Opfer von Sexualstraftaten
+* 180715 Mädchen und Frauen Opfer von Häuslicher Gewalt
 
 155 Frauen getötet von ihrem aktuellen oder früheren Partner [2023](https://www.frauen-gegen-gewalt.de/de/infothek/toetung-von-frauen-femizid/merkmale-und-tatsachen.html)
 
