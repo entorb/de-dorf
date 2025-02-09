@@ -9,6 +9,7 @@ from helper import (
     include_matomo_stats,
     print_table_complete,
     print_table_simple,
+    read_countries,
     read_data,
     read_flaechennutzung,
 )
@@ -38,9 +39,10 @@ Viel Spaß damit wünscht Torben
 Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen beisteuern? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen und Verbesserungsvorschläge einreichen.
 """)  # noqa: E501
 
+pop = st.session_state.get("sel_pop", 2000)
+
 
 # population for village, defaults to 2000
-pop = st.session_state.get("sel_pop", 2000)
 df = read_data(pop)
 categories = df["Kategorie"].unique().tolist()
 # sort after extracting the groups in custom order
@@ -93,6 +95,49 @@ if len(dfs) > 0:
 
     # print_table_complete(df2.sort_values(["Prozent", "Titel"], ascending=[False, True]))  # noqa: E501
     print_table_simple(df2, col=cols[0], show_source=False)
+
+
+st.header("Die Welt als Dorf")
+st.markdown(
+    """
+    Hier ist nun die ganze Weltbevölkerung auf das fiktive Dorf skaliert. Datenquelle: [2021](https://www.destatis.de/DE/Themen/Laender-Regionen/Internationales/Thema/Tabellen/Basistabelle_Bevoelkerung.html)
+    """
+)
+df1, df2 = read_countries(pop)
+
+num_columns = 2 if sel_compact_layout else 1
+cols = st.columns(num_columns)
+cols[0].dataframe(
+    df2,
+    hide_index=True,
+    use_container_width=True,
+    column_order=["Kontinent", "Dorf"],
+    column_config={
+        "Kontinent": st.column_config.Column("Aus Kontinent"),
+        "Dorf": st.column_config.ProgressColumn(
+            label="Personen im Dorf",
+            format="%d",
+            min_value=0,
+            max_value=pop,
+        ),
+    },
+)
+
+cols[num_columns - 1].dataframe(
+    df1,
+    hide_index=True,
+    use_container_width=True,
+    column_order=["Land", "Dorf"],
+    column_config={
+        "Land": st.column_config.Column("Aus Land"),
+        "Dorf": st.column_config.ProgressColumn(
+            label="Personen im Dorf",
+            format="%d",
+            min_value=0,
+            max_value=pop,
+        ),
+    },
+)
 
 
 st.header("Einstellungen")
