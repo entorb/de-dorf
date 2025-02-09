@@ -62,20 +62,44 @@ def test_pop_data_for_all_years() -> None:
             assert int(row["Jahr"]) in d, row["Jahr"]
 
 
-def test_flaechennutzung_columns() -> None:
-    cont = Path("data/flaechennutzung.csv").read_text().strip()
+def test_flaechennutzung() -> None:
+    p = Path("data/flaechennutzung.csv")
+    cont = p.read_text().strip()
     assert "\r" not in cont
     for line in cont.split("\n"):
         columns = line.split(";")
         assert len(columns) == 7, line
 
-
-def test_flaechennutzung_no_whitespaces() -> None:
-    with Path("data/flaechennutzung.csv").open(mode="r", encoding="utf-8") as fh:
+    with p.open(mode="r", encoding="utf-8") as fh:
         csv_reader = csv.DictReader(fh, delimiter=";")
+        assert csv_reader.fieldnames == [
+            "Code",
+            "Kategorie 1",
+            "Kategorie 2",
+            "Was",
+            "qkm",
+            "Jahr",
+            "Quelle",
+        ], csv_reader.fieldnames
+
         for row in csv_reader:
             for col in row:
                 assert row[col] == row[col].strip(), f"'{row[col]}'"
             assert "," not in row["qkm"], row["qkm"]
             # assert convert to float
             assert float(row["qkm"]), row["qkm"]
+
+
+def test_countries() -> None:
+    p = Path("data/countries.tsv")
+    with p.open(mode="r", encoding="utf-8") as fh:
+        csv_reader = csv.DictReader(fh, delimiter="\t")
+        assert csv_reader.fieldnames == ["Kontinent", "Land", "Jahr", "Einwohner"], (
+            csv_reader.fieldnames
+        )
+        for row in csv_reader:
+            for col in row:
+                assert row[col] == row[col].strip(), f"'{row[col]}'"
+            assert "," not in row["Einwohner"], row["Einwohner"]
+            assert " " not in row["Einwohner"], row["Einwohner"]
+            assert int(row["Einwohner"]), row["Einwohner"]

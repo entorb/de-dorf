@@ -106,6 +106,31 @@ def read_flaechennutzung() -> pd.DataFrame:
     return df
 
 
+@st.cache_data(ttl="1d")
+def read_countries(pop: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Read and prepare the data of country population (cached).
+
+    returns df for countries and df for continents
+    """
+    df1 = pd.read_csv("data/countries.tsv", sep="\t")
+    df1 = df1.drop(columns=["Jahr"])
+    df1 = df1.sort_values("Einwohner", ascending=False)
+
+    # Kontinente
+    df2 = (
+        df1.groupby("Kontinent")
+        .agg(Einwohner=("Einwohner", "sum"))
+        .sort_values("Einwohner", ascending=False)
+    ).reset_index()
+
+    total = df2["Einwohner"].sum()
+    df1["Dorf"] = (df1["Einwohner"] / total * pop).round(0)
+    df2["Dorf"] = (df2["Einwohner"] / total * pop).round(0)
+
+    return df1, df2
+
+
 def include_matomo_stats() -> None:
     """Include Matomo access stats update JavaScript snippet."""
     import streamlit.components.v1 as components
