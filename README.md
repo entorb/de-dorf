@@ -7,3 +7,9 @@ Um interessante Fakten zur deutschen Bevölkerung, wie beispielsweise "1.6 Mill.
 ## Mitmachen
 
 Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen beisteuern? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen und Verbesserungsvorschläge einreichen.
+
+## Unit tests
+
+```sh
+pytest --cov --cov-report=html:coverage_report
+```

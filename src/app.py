@@ -55,7 +55,7 @@ print_table_complete(df)
 
 st.header("Kategorien")
 cols = st.columns((1, 5))
-sel_compact_layout = cols[0].toggle("kompaktes Layout", value=False)
+sel_compact_layout = cols[0].toggle("kompaktes Layout", value=False, key="sel_compact")
 
 num_columns = 2 if sel_compact_layout else 1
 cols = st.columns(num_columns)
