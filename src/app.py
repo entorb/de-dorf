@@ -39,11 +39,12 @@ Viel Spaß damit wünscht Torben
 Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen beisteuern? Dann schlag sie gerne direkt auf [GitHub](https://github.com/entorb/de-dorf/blob/main/data/data.tsv) vor. Alternativ kannst Du auch über [dieses Formular](https://entorb.net/contact.php?origin=de-dorf) Kontakt aufnehmen und Verbesserungsvorschläge einreichen.
 """)  # noqa: E501
 
-pop = st.session_state.get("sel_pop", 2000)
+sel_pop = st.slider("Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
+# pop = st.session_state.get("sel_pop", 2000)
 
 
 # population for village, defaults to 2000
-df = read_data(pop)
+df = read_data(sel_pop)
 categories = df["Kategorie"].unique().tolist()
 # sort after extracting the groups in custom order
 df = df.sort_values(["Kategorie", "Prozent"], ascending=[True, False])
@@ -103,7 +104,7 @@ st.markdown(
     Hier ist nun die ganze Weltbevölkerung auf das fiktive Dorf skaliert. Datenquelle: [2021](https://www.destatis.de/DE/Themen/Laender-Regionen/Internationales/Thema/Tabellen/Basistabelle_Bevoelkerung.html)
     """
 )
-df1, df2 = read_countries(pop)
+df1, df2 = read_countries(sel_pop)
 
 num_columns = 2 if sel_compact_layout else 1
 cols = st.columns(num_columns)
@@ -118,7 +119,7 @@ cols[0].dataframe(
             label="Personen im Dorf",
             format="%d",
             min_value=0,
-            max_value=pop,
+            max_value=sel_pop,
         ),
     },
 )
@@ -134,14 +135,10 @@ cols[num_columns - 1].dataframe(
             label="Personen im Dorf",
             format="%d",
             min_value=0,
-            max_value=pop,
+            max_value=sel_pop,
         ),
     },
 )
-
-
-st.header("Einstellungen")
-sel_pop = st.slider("Anzahl Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
 
 
 st.header("Flächennutzung")
