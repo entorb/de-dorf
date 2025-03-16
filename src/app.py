@@ -40,7 +40,6 @@ Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen bei
 """)  # noqa: E501
 
 sel_pop = st.slider("Dorfbewohner", 100, 5000, 2000, 25, key="sel_pop")
-# pop = st.session_state.get("sel_pop", 2000)
 
 
 # population for village, defaults to 2000
