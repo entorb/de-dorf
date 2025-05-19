@@ -13,3 +13,7 @@ Hast Du weitere interessante Zahlen gefunden oder möchtest Aktualisierungen bei
 ```sh
 pytest --cov --cov-report=html:coverage_report
 ```
+
+## SonarQube Code Analysis
+
+At [sonarcloud.io](https://sonarcloud.io/summary/overall?id=entorb_de-dorf&branch=main)
