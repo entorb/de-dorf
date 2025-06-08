@@ -12,3 +12,4 @@ requirements-all.txt
 # project
 .streamlit/secrets.toml
 data/*.xlsx
+requirements.txt

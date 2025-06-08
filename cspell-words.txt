@@ -25,9 +25,11 @@ maximalsanktionierte
 Menke
 noqa
 notna
+numpy
 Pandas
 Personen
 Prozent
+pyarrow
 pycache
 pyenv
 pyproject
