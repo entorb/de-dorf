@@ -133,7 +133,7 @@ def read_countries(pop: int) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 def include_matomo_stats() -> None:
     """Include Matomo access stats update JavaScript snippet."""
-    import streamlit.components.v1 as components
+    import streamlit.components.v1 as components  # ruff: noqa: PLC0415
 
     components.html(
         """
