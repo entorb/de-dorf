@@ -131,9 +131,21 @@ def read_countries(pop: int) -> tuple[pd.DataFrame, pd.DataFrame]:
     return df1, df2
 
 
-def include_matomo_stats() -> None:
-    """Include Matomo access stats update JavaScript snippet."""
-    import streamlit.components.v1 as components  # ruff: noqa: PLC0415
+def init_sentry() -> None:
+    """Initialize Sentry exception tracking/alerting."""
+    import sentry_sdk  # noqa: PLC0415
+
+    sentry_sdk.init(
+        dsn=st.secrets["sentry_dns"],
+        environment="entorb.net",
+        send_default_pii=True,
+        traces_sample_rate=0.0,
+    )
+
+
+def init_matomo() -> None:
+    """Initialize Matomo access stats, via JavaScript snippet."""
+    import streamlit.components.v1 as components  # noqa: PLC0415
 
     components.html(
         """
