@@ -1,8 +1,8 @@
 Kategorie	Titel	Personen	Prozent	Jahr	Kommentar	Quelle
 Allgemein	Ausländeranteil	12324195		2022		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
+Allgemein	funktionale Analphabeten unter Erwachsenen	6200000		2018		https://leo.blogs.uni-hamburg.de/leo-2018-62-millionen-gering-literalisierte-erwachsene/
 Allgemein	geflüchtete Syrer	712000		2023		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_N062_12.html
 Allgemein	geflüchtete Ukrainer	982700		2023		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_N062_12.html
-Allgemein	funktionale Analphabeten unter Erwachsenen	6200000		2018		https://leo.blogs.uni-hamburg.de/leo-2018-62-millionen-gering-literalisierte-erwachsene/
 Allgemein	Kinder in Heimen	121000		2022		https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/12/PD23_493_225.html
 Allgemein	Kinder in Pflegefamilien	86000		2022		https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/12/PD23_493_225.html
 Allgemein	Wohnen zur Miete		52.4	2023		https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/Publikationen/Downloads-Bevoelkerungsstand/statistischer-bericht-bevoelkerungsfortschreibung-2010130227005.html
@@ -80,7 +80,10 @@ Wahl 2021	Zweitstimme Linke	2255864		2021		https://www.bundeswahlleiterin.de/bun
 Wahl 2021	Zweitstimme SPD	11901558		2021		https://www.bundeswahlleiterin.de/bundestagswahlen/2021/ergebnisse/bund-99.html
 Wahl 2021	Zweitstimme ungültig	408956		2021		https://www.bundeswahlleiterin.de/bundestagswahlen/2021/ergebnisse/bund-99.html
 Wahl 2025	Nicht-Wähler	10581978		2025	Wahlberechtigte-Wähler	https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html
-Wahl 2025	Wahlberechtigte	60510631		2025		https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.htmlbundestagswahlen/
+Wahl 2025	Wahlberechtigte	59200000		2025		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_460_14.html
+Wahl 2025	Wahlberechtigte 40-59	18200000		2025		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_460_14.html
+Wahl 2025	Wahlberechtigte U40	16100000		2025		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_460_14.html
+Wahl 2025	Wahlberechtigte Ü60	24900000		2025		https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_460_14.html
 Wahl 2025	Wähler	49928653		2025		https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html
 Wahl 2025	Zweitstimme AFD	10328780		2025		https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html
 Wahl 2025	Zweitstimme BSW	2472947		2025		https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html
