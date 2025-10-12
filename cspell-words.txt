@@ -30,6 +30,7 @@ Personen
 Prozent
 pycache
 pyenv
+pyproject
 pytest
 Quelle
 ruzv
@@ -37,6 +38,7 @@ selectbox
 SonarCloud
 SonarQube
 Statistiken
+streamlit
 Streamlit
 supervisorctl
 Titel

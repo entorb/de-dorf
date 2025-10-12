@@ -3,8 +3,8 @@
 [global]
 
 [logger]
-level = "info"
 messageFormat = "%(asctime)s\t%(levelname)s\t%(name)s\t%(message)s"
+level = "info"
 
 [client]
 showErrorDetails = "full"
@@ -12,11 +12,11 @@ showErrorDetails = "full"
 [runner]
 
 [server]
-port = 8502
-maxUploadSize = 1 # MB
-# restrict access to localhost for dev environment
-address = "127.0.0.1"
+address = "127.0.0.1"        # localhost only for local dev
+baseUrlPath = "/de-dorf"
 fileWatcherType = "watchdog"
+maxUploadSize = 1            # MB
+port = 8502
 
 [browser]
 gatherUsageStats = false

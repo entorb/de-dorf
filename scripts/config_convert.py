@@ -12,7 +12,6 @@ with p_in.open("rb") as fh:
     o = tomllib.load(fh)
 
 o["server"]["fileWatcherType"] = "none"
-o["server"]["baseUrlPath"] = "/de-dorf"
 if "address" in o["server"]:
     del o["server"]["address"]
 

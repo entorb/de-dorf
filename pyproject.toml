@@ -1,0 +1,17 @@
+[project]
+name = "de-dorf"
+version = "0.1.0"
+description = "Statistiken zur deutschen Bevölkerung auf ein Dorf umgerechnet"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["streamlit>=1.50.0", "numpy>=2.3.2", "pandas>=2.3.2"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.0",
+    "tomli-w>=1.2.0",
+    "watchdog>=6.0.0",
+]
