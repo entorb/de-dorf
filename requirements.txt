@@ -1,4 +1,0 @@
-# update via https://pkgui.com/pip
-pandas>=2.3.3
-sentry-sdk>=2.40.0
-streamlit>=1.50.0
