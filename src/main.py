@@ -114,7 +114,7 @@ def main() -> None:  # noqa: D103
     cols[0].dataframe(
         df2,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_order=["Kontinent", "Dorf"],
         column_config={
             "Kontinent": st.column_config.Column("Aus Kontinent"),
@@ -130,7 +130,7 @@ def main() -> None:  # noqa: D103
     cols[num_columns - 1].dataframe(
         df1,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_order=["Land", "Dorf"],
         column_config={
             "Land": st.column_config.Column("Aus Land"),
@@ -152,7 +152,7 @@ def main() -> None:  # noqa: D103
     st.dataframe(
         df,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             # "Quelle": st.column_config.LinkColumn("Quelle", display_text="Link"),
             # "Jahr": st.column_config.NumberColumn("Jahr", format="%d"),

@@ -1,19 +1,19 @@
 [global]
 
 [logger]
-level = "info"
 messageFormat = "%(asctime)s	%(levelname)s	%(name)s	%(message)s"
+level = "info"
 
 [client]
-showErrorDetails = true
+showErrorDetails = "full"
 
 [runner]
 
 [server]
-port = 8502
-maxUploadSize = 1
-fileWatcherType = "none"
 baseUrlPath = "/de-dorf"
+fileWatcherType = "none"
+maxUploadSize = 1
+port = 8502
 
 [browser]
 gatherUsageStats = false
