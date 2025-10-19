@@ -20,7 +20,7 @@ def run_and_assert_no_problems(at: AppTest) -> None:
 
 
 def test_app() -> None:
-    p = Path("src/app.py")
+    p = Path("src/main.py")
     at = AppTest.from_file(p)
     run_and_assert_no_problems(at)
 

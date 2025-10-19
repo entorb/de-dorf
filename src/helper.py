@@ -40,7 +40,7 @@ def print_table_simple(
     col.dataframe(
         df,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_order=col_order,
         column_config={
             "Title": st.column_config.Column("Title", width="small"),
@@ -63,7 +63,7 @@ def print_table_complete(df: pd.DataFrame) -> None:
     st.dataframe(
         df,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_order=[
             "Kategorie",
             "Titel",
