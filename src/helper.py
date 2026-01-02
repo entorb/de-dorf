@@ -136,7 +136,7 @@ def init_sentry() -> None:
     import sentry_sdk  # noqa: PLC0415
 
     sentry_sdk.init(
-        dsn=st.secrets["sentry_dns"],
+        dsn=st.secrets["sentry_dsn"],
         environment="entorb.net",
         send_default_pii=True,
         traces_sample_rate=0.0,
