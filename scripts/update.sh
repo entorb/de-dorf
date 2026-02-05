@@ -20,4 +20,9 @@ uv lock --upgrade
 uv sync --upgrade
 python scripts/gen_requirements.py
 
+uv run pre-commit autoupdate
+
+./scripts/run_ruff.sh
+./scripts/run_pre-commit.sh
+
 echo DONE
