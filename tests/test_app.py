@@ -1,5 +1,5 @@
 """Use Streamlit AppTest."""
-# ruff: noqa: D103, INP001
+# ruff: noqa: INP001
 
 import sys
 import warnings

@@ -1,4 +1,4 @@
-# ruff: noqa: D100 D103 INP001 PLR2004
+# ruff: noqa: INP001, PLR2004
 import csv
 from pathlib import Path
 
