@@ -23,21 +23,41 @@ jobs:
         uses: actions/checkout@v6
         with:
           persist-credentials: false
-          fetch-depth: 1 # 0 if you want to push to repo
+          fetch-depth: 1 # latest only
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
 
       - name: Python set up
         uses: actions/setup-python@v6
         with:
           python-version-file: ".python-version"
 
+      - name: Run Ruff
+        run: |
+          uv run --frozen ruff format --check
+          uv run --frozen ruff check --no-fix --output-format=github
+
       - name: Run pytest unittests
         run: |
           uv run --frozen pytest tests/
+        # --cov \
+        # --cov-report=term-missing \
+        # --cov-report=xml:coverage.xml
 
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.1
+
+      # # for SonarQube coverage report
+      # - name: SonarQube Scan
+      #   uses: SonarSource/sonarqube-scan-action@v7
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      # - name: Minimize uv cache
+      #   run: uv cache prune --ci

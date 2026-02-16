@@ -7,14 +7,14 @@ cd $(dirname $0)/..
 set -e
 
 uv remove numpy pandas pyarrow streamlit sentry-sdk
-uv remove --dev ruff pre-commit pytest pytest-cov tomli-w watchdog
+uv remove --dev ruff pre-commit pytest pytest-cov tomli-w
 
 uv lock --upgrade
 uv sync --upgrade
 
 # pin to old versions due to Uberspace restrictions
 uv add numpy==2.2.3 pandas==2.2.3 pyarrow==20.0.0 streamlit sentry-sdk
-uv add --dev ruff pre-commit pytest pytest-cov tomli-w watchdog
+uv add --dev ruff pre-commit pytest pytest-cov tomli-w
 
 uv lock --upgrade
 uv sync --upgrade

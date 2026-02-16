@@ -1,5 +1,5 @@
 # install package
-#  uv add -dev pre-commit
+#  uv add --dev pre-commit
 # register as git commit-hook to run automatically
 #  uv run pre-commit install
 # run manually
@@ -12,7 +12,7 @@ default_language_version:
 
 exclude: |
   (?x)^(
-    # \.vscode/.*|
+    \.vscode/.*|
     data/.*|
   )$
 
@@ -62,12 +62,12 @@ repos:
       - id: trailing-whitespace
 
   # ruff
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.0
-    hooks:
-      - id: ruff-check
-        args: [--fix, --exit-non-zero-on-fix]
-      - id: ruff-format
+  # - repo: https://github.com/astral-sh/ruff-pre-commit
+  #   rev: v0.15.1
+  #   hooks:
+  #     - id: ruff-check
+  #       args: [--fix, --exit-non-zero-on-fix]
+  #     - id: ruff-format
 
   # security
   - repo: https://github.com/gitleaks/gitleaks
@@ -84,6 +84,6 @@ repos:
 
   # # code spell check via cspell
   # - repo: https://github.com/streetsidesoftware/cspell-cli
-  #   rev: v9.0.1
+  #   rev: v9.6.0
   #   hooks:
   #     - id: cspell
