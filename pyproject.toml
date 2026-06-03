@@ -8,8 +8,8 @@ dependencies = [
     "numpy==2.2.3",
     "pandas==2.2.3",
     "pyarrow==20.0.0",
-    "sentry-sdk>=2.59.0",
-    "streamlit>=1.57.0",
+    "sentry-sdk>=2.61.1",
+    "streamlit>=1.58.0",
 ]
 
 [dependency-groups]
@@ -17,7 +17,7 @@ dev = [
     "pre-commit>=4.6.0",
     "pytest>=9.0.3",
     "pytest-cov>=7.1.0",
-    "ruff>=0.15.12",
+    "ruff>=0.15.15",
     "tomli-w>=1.2.0",
     "watchdog>=6.0.0",
 ]
