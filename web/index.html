@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deutschland als Dorf</title>
+    <link rel="stylesheet" href="app.css" />
+    <script>
+      var _paq = window._paq || [];
+      window._paq = _paq;
+      _paq.push(["trackPageView"], ["enableLinkTracking"]);
+      if (!location.protocol.startsWith("file:")) {
+        (() => {
+          var u = "https://entorb.net/stats/matomo/";
+          _paq.push(["setTrackerUrl", `${u}matomo.php`], ["setSiteId", "7"]);
+          var d = document,
+            g = d.createElement("script"),
+            s = d.getElementsByTagName("script")[0];
+          g.async = true;
+          g.src = `${u}matomo.js`;
+          s.parentNode.insertBefore(g, s);
+        })();
+      }
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
