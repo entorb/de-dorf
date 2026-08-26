@@ -1,0 +1,11 @@
+.coverage
+.cspellcache
+.DS_Store
+.pytest_cache/
+.venv/
+.vscode/
+__pycache__/
+coverage_report/
+cspell-words-missing.txt
+uv.lock
+web/data.js
