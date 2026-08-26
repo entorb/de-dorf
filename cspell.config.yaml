@@ -14,12 +14,12 @@ dictionaries:
 language: en-US
 ignorePaths:
   - '.*'
-  - '/.vscode/'
-  - '/LICENSE'
-  - 'cspell-words.txt'
-  - 'cspell.config.yaml'
-  - 'data/countries.ts'
-  - 'data/flaechennutzung.csv'
-  - 'data/population.tsv'
-  - 'tests/testdata/*'
-  - 'uv.lock'
+  - /.vscode/
+  - /LICENSE
+  - cspell-words.txt
+  - cspell.config.yaml
+  - data/countries.ts
+  - data/flaechennutzung.csv
+  - data/population.tsv
+  - tests/testdata/*
+  - uv.lock
