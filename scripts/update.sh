@@ -7,11 +7,11 @@ cd "$(dirname "$0")/.." || exit 1
 set -e
 
 # update dependencies
-uv --no-build sync --upgrade
+uv sync --upgrade
 
 # ruff
-uv --no-build run ruff format
-uv --no-build run ruff check --fix
+uv run ruff format
+uv run ruff check --fix
 
 # pre-commit
 prek autoupdate
