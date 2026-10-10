@@ -29,7 +29,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * 1-7 * 0"]
+      "schedule": ["* * * * 6"]
     },
     {
       "matchManagers": ["pre-commit"],
@@ -37,7 +37,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * 1-7 * 0"]
+      "schedule": ["* * * * 6"]
     },
     {
       "groupName": "tools-py",
@@ -54,7 +54,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * 1-7 * 0"]
+      "schedule": ["* * * * 6"]
     },
     {
       "groupName": "tools-js",
@@ -78,7 +78,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * 1-7 * 0"]
+      "schedule": ["* * * * 6"]
     }
   ]
 }
