@@ -17,6 +17,10 @@
   "pre-commit": {
     "enabled": true
   },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* 18-23 * * 6"]
+  },
   "packageRules": [
     {
       "description": "Override Mend-hosted global approval rule",
@@ -29,7 +33,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * * * 6"]
+      "schedule": ["* 0-12 * * 6"]
     },
     {
       "matchManagers": ["pre-commit"],
@@ -37,7 +41,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * * * 6"]
+      "schedule": ["* 0-12 * * 6"]
     },
     {
       "groupName": "tools-py",
@@ -54,7 +58,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * * * 6"]
+      "schedule": ["* 0-12 * * 6"]
     },
     {
       "groupName": "tools-js",
@@ -78,7 +82,7 @@
       "enabled": true,
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "schedule": ["* * * * 6"]
+      "schedule": ["* 0-12 * * 6"]
     }
   ]
 }
