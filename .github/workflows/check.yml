@@ -4,9 +4,9 @@ name: Check Code
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * 0"  # Sunday 05:00 UTC, audit alert
+    - cron: '0 5 * * 0'  # Sunday 05:00 UTC, audit alert
   push:
-    branches: ["main", "renovate/**"]
+    branches: [main, renovate/**]
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -48,7 +48,7 @@ jobs:
       - name: Run prek pre-commit
         uses: j178/prek-action@1382ad72dea72f9d53832f2bcb65b3e87a947204  # v3.0.1
         with:
-          extra-args: '--all-files --quiet'
+          extra-args: --all-files --quiet
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@ce1816e4ce36532956ac6e983737392774b6e169  # v9
