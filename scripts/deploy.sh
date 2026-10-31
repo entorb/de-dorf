@@ -17,6 +17,6 @@ uv run --no-build ruff check
 uv run --no-build python scripts/gen_data.py
 
 echo copying
-rsync -ruzv --delete web/ entorb@entorb.net:html/de-dorf/
+rsync -ruzv --delete web/ entorb@mab.uberspace.de:html/de-dorf/
 
 echo DONE
